@@ -36,6 +36,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-shixen-reactapi-k9w3w5nfodp.ws.codeinstitute-ide.net']
 
+CORS_ALLOWED_ORIGINS = [
+    "https://8000-shixen-reactapi-k9w3w5nfodp.ws.codeinstitute-ide.net",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-shixen-reactapi-k9w3w5nfodp.ws.codeinstitute-ide.net",
+]
 
 # Application definition
 
@@ -47,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'corsheaders',
     'cloudinary',
     'rest_framework',
     'profiles',
@@ -61,6 +69,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'drf_api.urls'
