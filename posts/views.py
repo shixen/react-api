@@ -31,7 +31,6 @@ class PostList(generics.ListCreateAPIView):
         'owner__username',
         'title',
     ]
-
     ordering_fields = [
         'likes_count',
         'comments_count',
